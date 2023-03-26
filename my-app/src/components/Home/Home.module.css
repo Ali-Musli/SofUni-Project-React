@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.backRoundImg {
+    background-image:url('/Users/alimusli/Desktop/SoftUni/ReactJS/Demos/Demo 21.03.2023/my-app/public/travel.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}

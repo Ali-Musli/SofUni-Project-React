@@ -1,0 +1,70 @@
+.about{
+    width: 100%;
+    padding: 78px 0px;
+    border-style: groove;
+}
+
+.about img{
+    height: auto;
+    width: 800px;
+}
+
+.text{
+    width: 470px ;
+    margin-left: 30px;
+}
+
+.text h1{
+    color: black;
+    font-size: 40px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: auto;
+}
+
+.text h4{
+    color: black;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.text p{
+    color: rgba(0, 0, 0, 0.51);
+    letter-spacing: 1px;
+    line-height: 23px;
+    font-size: 15px;
+}
+
+.main{
+    width: 1140px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btns{
+
+}
+
+.btns button{
+    background: #f9004d;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+    margin-bottom: 10px;
+}
+
+.btns button:hover{
+    background: transparent;
+    border: 2px solid #f9004d;
+    cursor: pointer;
+}

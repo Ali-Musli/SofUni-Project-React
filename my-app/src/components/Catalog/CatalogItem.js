@@ -2,26 +2,37 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-import style from './Catalog.module.css'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+import style from './Catalog.module.css';
 
 export const CatalogItem = ({
     imageUrl,
     titile,
-    description,
+    location,
     _id
 }) => {
+  const [likes, setLike] = useState('')
+  const onLikeClick = () => {
+    setLike(state => Number(state) + 1)
+  }
     return (
         <Col>
-          <Card className={style.col}>
-            <Card.Img variant="top" src={imageUrl} />
+          <Card className={style.col} border='secondary' bg='light'>
+            <Card.Img variant="top" src={imageUrl} className={style.img}/>
             <Card.Body>
-              <Card.Title>{titile}</Card.Title>
-              <Card.Text>{description}</Card.Text>
+              <Card.Title>Titile: {titile}</Card.Title>
+              <Card.Text>Location: {location}</Card.Text>
             </Card.Body>
-            <Button as={Link} to={`/details/${_id}`} variant="primary" size="lg">
-              Primary button
+            <div className={null}>
+            <Button className={style.btnDetails} as={Link} to={`/details/${_id}`}  variant="success">
+              Details
             </Button>
+            <Button onClick={onLikeClick} className={style.btnLike} as={Link} to={`#`}  variant="primary" >
+              Like: {likes}
+            </Button>
+            </div>
           </Card>
         </Col>
     )

@@ -6,7 +6,12 @@ Full stack web application
 The app allows visitors to browse different types of posts. Users can register with an email and password, which allows them to create their own post. Post authors can also edit or delete their own posts at any time.
 
 ### Navigation Bar
-Guests (un-authenticated visitors) can see the links to the All Posts (Catalogue) page, as well as the links to the Login, Register and Home pages.
+Guests (un-authenticated visitors) can see the links to the All Posts (Catalogue) page, as well as the links to the Login, Register and Home pages. The logged-in user can see the links to the All Posts (Catalogue), Create Post, My Posts, Logout and Home page.
+
+### Login
+The Login page contains a form for existing user authentication. By providing an email and password, the app will login a user in the system if there are no empty fields.
+
+Upon success, the REST service will return information about the existing user along with a property accessToken, which contains the session token for the user. The information will be store in localStorage, in order to be able to perform authenticated requests. If the login is successful, the user will be redirect to the Home page. 
 
 ## Learn More
 

@@ -1,8 +1,10 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+
 import { Link } from 'react-router-dom';
-import style from './MyProfile.module.css'
+
+import style from './ItemMyProfile.module.css';
 
 export const ItemMyProfil = ({
     imageUrl,

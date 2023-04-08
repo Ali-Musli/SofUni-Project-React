@@ -1,6 +1,5 @@
 import Card from 'react-bootstrap/Card';
-
-import style from './Details.module.css';
+import style from './CardDetails.module.css';
 
 export const CardDetails = ({
     titile,
@@ -9,10 +8,10 @@ export const CardDetails = ({
 }) => {
     return (
         <Card.Body className={style.body}>
-            <Card.Title>Titile: {titile}</Card.Title>
-            <Card.Text>Location: {location}</Card.Text>
+            <Card.Title><span>Titile:</span> {titile}</Card.Title>
+            <Card.Text><span>Location:</span> {location}</Card.Text>
             <Card.Text>
-                Description: {description}
+                <span>Description:</span> {description}
             </Card.Text>
         </Card.Body>
     )

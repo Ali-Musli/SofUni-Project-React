@@ -1,10 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import { Contexts } from "../../contexts/Contexts";
 
-export const Delete = () => {
-    const { OnDelSubmit } = useContext(Contexts);
+export const Delete = ({
+    OnDelSubmit,
+}) => {
     const { postId } = useParams();
 
     useEffect(() => {

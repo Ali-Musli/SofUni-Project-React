@@ -1,33 +1,32 @@
-import { useContext, useEffect, useState } from 'react';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { ItemMyProfil } from '../ItemMyProfile/ItemMyProfile';
 
-import { Contexts } from '../../contexts/Contexts';
-import * as posetService from '../../services/postService'
-import { ItemMyProfil } from './ItemMyProfile';
+import { useContext, useEffect, useState } from 'react';
+import { Contexts } from '../../../contexts/Contexts';
 import { Link } from 'react-router-dom';
 
-import style from './MyProfile.module.css'
+import * as posetService from '../../../services/postService';
+
+import style from './MyProfile.module.css';
 
 function MyProfile() {
-    const [posts, setPosts] = useState([])
-    const { auth } = useContext(Contexts)
+    const [posts, setPosts] = useState([]);
+    const { auth } = useContext(Contexts);
     const userId = auth._id;
-    console.log(userId);
 
     const getMyPosts = async () => {
-        const response = await posetService.getAll()
+        const response = await posetService.getAll();
         const res = response.filter(function (post) {
-            return post._ownerId === userId
+            return post._ownerId === userId;
         })
 
-        const result = res.reverse()
-        setPosts(result)
+        const result = res.reverse();
+        setPosts(result);
     }
 
     useEffect(() => {
-        getMyPosts()
-    }, [userId])
+        getMyPosts();
+    }, [userId]);
 
     return (
         <div className={style.bgImage}>

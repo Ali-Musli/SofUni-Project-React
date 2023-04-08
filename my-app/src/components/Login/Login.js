@@ -1,30 +1,24 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+
 import { Link } from 'react-router-dom';
-
-import { useState } from 'react';
-
-
-import style from './Login.module.css'
-
 import { useContext } from 'react';
 import { Contexts } from '../../contexts/Contexts';
 import { useForm } from '../../hooks/useForm';
 
+import style from './Login.module.css';
 
 function TextControlsExample() {
-    const { onLoginSubmit, error } = useContext(Contexts)
+    const { onLoginSubmit, errorr } = useContext(Contexts);
 
-
-    const {values, changeHandler, onSubmit} = useForm({
+    const { values, changeHandler, onSubmit } = useForm({
         email: '',
         password: ''
-    }, onLoginSubmit)
+    }, onLoginSubmit);
 
     return (
         <div className={style.bgImage}>
-
             <div
                 className="modal show"
                 style={{ display: 'block', position: 'initial' }}
@@ -46,8 +40,8 @@ function TextControlsExample() {
                                     value={values.email}
                                     onChange={changeHandler}
                                 />
-                                {error === 'Fields required!' && values.email.length === 0 &&
-                                    <Form.Label className={style.error}>{error}</Form.Label>
+                                {errorr === 'required!' && values.email.length === 0 &&
+                                    <Form.Label className={style.error}>Email is {errorr}</Form.Label>
                                 }
 
                             </Form.Group>
@@ -60,13 +54,12 @@ function TextControlsExample() {
                                     value={values.password}
                                     onChange={changeHandler}
                                 />
-                                {error === 'Fields required!' && values.password.length === 0 &&
-                                    <Form.Label className={style.error}>{error}</Form.Label>
+                                {errorr === 'required!' && values.password.length === 0 &&
+                                    <Form.Label className={style.error}>Password is {errorr}</Form.Label>
                                 }
-                                {error === "Login or password don't match" &&
-                                    <Form.Label className={style.error}>{error}</Form.Label>
+                                {errorr === "Login or password don't match" &&
+                                    <Form.Label className={style.error}>{errorr}</Form.Label>
                                 }
-
                             </Form.Group>
 
                             <Button as={Link} to='/' variant="secondary">Close</Button>

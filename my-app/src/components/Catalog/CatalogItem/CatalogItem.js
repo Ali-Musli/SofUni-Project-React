@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import style from './Catalog.module.css';
+import style from './CatalogItem.module.css';
 
 export const CatalogItem = ({
     imageUrl,
@@ -13,10 +13,6 @@ export const CatalogItem = ({
     location,
     _id
 }) => {
-  const [likes, setLike] = useState('')
-  const onLikeClick = () => {
-    setLike(state => Number(state) + 1)
-  }
     return (
         <Col>
           <Card className={style.col} border='secondary' bg='light'>
@@ -28,9 +24,6 @@ export const CatalogItem = ({
             <div className={null}>
             <Button className={style.btnDetails} as={Link} to={`/details/${_id}`}  variant="success">
               Details
-            </Button>
-            <Button onClick={onLikeClick} className={style.btnLike} as={Link} to={`#`}  variant="primary" >
-              Like: {likes}
             </Button>
             </div>
           </Card>

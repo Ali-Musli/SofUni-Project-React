@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.main {
+    background-color: rgba(51, 19, 19, 0.469);
+    position: relative;
+    height: 100vh;
+    background-image: url('/Users/alimusli/Desktop/SoftUni/ReactJS/Demos/Demo 21.03.2023/my-app/public/309139.png');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.content{
+    width: 60%;
+    height: 20%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.366);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
+
+.content h1{
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.content h2{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.783);
+    margin-bottom: 20px;
+}
+
+.btns {
+    background: #f9004d;
+    color: white;
+    text-decoration: none;
+    border: 1px solid transparent;
+    font-weight: bold;
+    padding: 3px 15px;
+    border-radius: 30px;
+    transition: .4s;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 10px;
+}
+
+.btns button:hover {
+    background: transparent;
+    border: 2px solid #f9004d;
+    cursor: pointer;
+}

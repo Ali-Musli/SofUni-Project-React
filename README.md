@@ -44,6 +44,29 @@ Upon success, the REST service will return he newly created record.
 
 If the create of post is successful, the user will be redirect to the All Posts Page.
 
+### Details Page
+All users can view details about posts. Clicking the Details link in of a post should display the Details page.
+
+If the currently logged in user is the creator of the post, the Edit and Delete will be displayed, otherwise they will not be available. If the currently logged in user is not the creator of the post they will have option to add a comment for curent post and see who is the owner of the post.
+
+### Edit Page
+The Edit page is accessible to logged-in users and allows the author to edit their own posts. Clicking the Edit a specific game link on the details page will display the Edit page. It contains a form with input fields for all relevant properties. If some of the form fields are not filled in, a post cannot be edited.
+
+Upon success, the REST service will return he edited record. 
+
+Upon success, the user will be redirected to the Details page for the current game.
+
+### Delete Page
+The delete action is available to logged-in users, for post they have created. When the author clicks on the Delete action on any of their posts, a confirmation dialog should be displayed, and upon confirming this dialog, the post will be deleted from the system.
+
+Upon success, the REST service will return an object, containing the deletion time.
+
+Upon success, the user will be redirected to the All Posts Page.
+
+
+
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

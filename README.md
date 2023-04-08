@@ -74,4 +74,4 @@ If there are no post, the button for "Create" will be available.
 
 
 ## Technologies Used
-*wow
++ Wow

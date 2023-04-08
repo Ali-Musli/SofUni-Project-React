@@ -22,6 +22,28 @@ Upon success, the REST service will return the newly created object with an auto
 
 If the register is successful, the user will be redirect to the Home page. 
 
+### Logout
+The logout action is available to logged-in users. 
+
+Upon success, the REST service will return an empty response and the session information will be cleared.
+
+If the logout was successful, the user will be redirect to the Home page. 
+
+### All Posts Page
+This page displays a list of all posts in the system, with their title and location. Clicking on any of the cards leads to the details page for the selected post.
+
+If there are no post (unauthenticated visitors), the button for "Login" will be available. If there are no post (authenticated visitors), the button for "Create" will be available. 
+
+### Home Page
+All users will be greeted from the homepage. The button for "See all posts" will be available. 
+
+### Create Game
+The Create page is available to logged-in users. It contains a form for creating new post. If some of the form fields are not filled in, a post cannot be created.
+
+Upon success, the REST service will return he newly created record. 
+
+If the create of post is successful, the user will be redirect to the All Posts Page.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

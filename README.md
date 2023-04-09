@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Travel-Blog-Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+The app allows visitors to browse different types of posts. Users can register with an email and password, which allows them to create their own post. Post authors can also edit or delete their own posts at any time.
 
-## Available Scripts
+### Navigation Bar
+Guests (un-authenticated visitors) can see the links to the All Posts (Catalogue) page, as well as the links to the Login, Register and Home pages. The logged-in user can see the links to the All Posts (Catalogue), Create Post, My Posts, Logout and Home page.
 
-In the project directory, you can run:
+### Login Page
+The Login page contains a form for existing user authentication. By providing an email and password, the app will login a user in the system if there are no empty fields.
 
-### `npm start`
+Upon success, the REST service will return information about the existing user along with a property accessToken, which contains the session token for the user. The information will be store in localStorage, in order to be able to perform authenticated requests. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If the login is successful, the user will be redirect to the Home page. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Register Page
+The Register page contains a form for new user registration. By providing an email, password and confirm password the app should register a new user in the system if there are no empty fields. 
 
-### `npm test`
+Upon success, the REST service will return the newly created object with an automatically generated _id and a property accessToken, which contains the session token for the user. The information will be store in localStorage, in order to be able to perform authenticated requests.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If the register is successful, the user will be redirect to the Home page. 
 
-### `npm run build`
+### Logout
+The logout action is available to logged-in users. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Upon success, the REST service will return an empty response and the session information will be cleared.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If the logout was successful, the user will be redirect to the Home page. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### All Posts Page
+This page displays a list of all posts in the system, with their title and location. Clicking on any of the cards leads to the details page for the selected post.
 
-### `npm run eject`
+If there are no post (unauthenticated visitors), the button for "Login" will be available. If there are no post (authenticated visitors), the button for "Create" will be available. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Home Page
+All users will be greeted from the homepage. The button for "See all posts" will be available. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Create Game
+The Create page is available to logged-in users. It contains a form for creating new post. If some of the form fields are not filled in, a post cannot be created.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Upon success, the REST service will return he newly created record. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+If the create of post is successful, the user will be redirect to the All Posts Page.
 
-## Learn More
+### Details Page
+All users can view details about posts. Clicking the Details link in of a post should display the Details page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If the currently logged in user is the creator of the post, the Edit and Delete will be displayed, otherwise they will not be available. If the currently logged in user is not the creator of the post they will have option to add a comment for curent post and see who is the owner of the post.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Edit Page
+The Edit page is accessible to logged-in users and allows the author to edit their own posts. Clicking the Edit a specific game link on the details page will display the Edit page. It contains a form with input fields for all relevant properties. If some of the form fields are not filled in, a post cannot be edited.
 
-### Code Splitting
+Upon success, the REST service will return he edited record. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Upon success, the user will be redirected to the Details page for the current game.
 
-### Analyzing the Bundle Size
+### Delete Page
+The delete action is available to logged-in users, for post they have created. When the author clicks on the Delete action on any of their posts, a confirmation dialog should be displayed, and upon confirming this dialog, the post will be deleted from the system.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Upon success, the REST service will return an object, containing the deletion time.
 
-### Making a Progressive Web App
+Upon success, the user will be redirected to the All Posts Page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Comments
+Every logged-in user will be able to comments other posts, but not his own. Guest will not be able to see the section Add new comment, but will be able to see the section Comments.
 
-### Advanced Configuration
+### My Posts Page
+This page displays a list of all posts in the system for the current user, with their title and location. Clicking on any of the cards takes you to the details page for the selected publication.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+If there are no post, the button for "Create" will be available. 
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies Used
++ React
++ HTML
++ CSS
++ React Bootstrap
++ JavaScript

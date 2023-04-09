@@ -19,6 +19,7 @@ import { Logout } from './components/Logout/Logout';
 import MyProfile from './components/MyProfile/MyProfile/MyProfile';
 import { RouteGuard } from './components/RouteGuard/RouteGuard';
 import { Error } from './components/Error/Error';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   const [posts, setPost] = useState([]);
@@ -88,6 +89,7 @@ function App() {
           <Route path='*' element={<Error />}></Route>
         </Routes>
       </div>
+      <Footer />
     </AuthProvider>
   );
 }

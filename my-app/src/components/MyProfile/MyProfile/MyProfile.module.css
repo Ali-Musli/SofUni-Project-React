@@ -7,11 +7,12 @@
 
 .bgImage {
     width: 100%;
-    height: 100vh;
+    height: 5000px;
     background-image: url('/Users/alimusli/Desktop/SoftUni/ReactJS/Demos/Demo 21.03.2023/my-app/public/notebook-compasses-near-binoculars-maps_23-2147793504.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center bottom;
+    background-attachment:fixed;
 }
 
 .content{
